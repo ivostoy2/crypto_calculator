@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=67", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crypto-calculator"
+version = "0.1.0"
+description = "Command line utilities for experimenting with cryptocurrency conversions"
+authors = [{name = "Crypto Calculator Team"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+crypto-calculator = "crypto_calculator.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
